@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Nkuzi Development Association - Index</title>
+  <title>Nkuzi Development Association - Login</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="images/logo.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -47,17 +47,19 @@
         <li><a href="index.php">Home</a></li>
         <li class="dropdown"><a href="#"><span>About Us</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="about.html">More about Nkuzi Development Association</a></li>
-            <li><a href="directors.php">Nkuzi Development Association Directors </a></li>
-            <li><a href="staff.php">Nkuzi Development Association Staff  </a></li>
-            <li><a href="funders.php">Nkuzi Development Funders/Donors  </a></li>
+            <li><a href="about.html">More About Us</a></li>
+            <li><a href="directors.php">Board Of Directors </a></li>
+            <li><a href="staff.php">Our Staff  </a></li>
+            <li><a href="funders.php">Our Funders/Donors  </a></li>
             <li><a href="partners.html">Our Partners</a></li>
-            <li><a href="portfolio.html">Gallery</a></li>
+
           </ul>
         </li>
-        <li><a href="blog.php">Programme</a></li>
-        <li><a href="documents.html">Documents</a></li>
         <li><a href="history.html">History</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.php">Programme</a></li>
+        <li><a href="documents.php">Documents</a></li>
+
         <li><a href="contact.html">Contact Us</a></li>
         <li><a class="active " href="adminLogin.php">Admin Login</a></li>
       </ul>

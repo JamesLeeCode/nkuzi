@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Nkuzi Development Association - About Us</title>
+  <title>Admin Dashboard</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -51,19 +51,22 @@
           <li><a href="index.php">Home</a></li>
           <li class="dropdown"><a href="#"><span>About Us</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="about.html">More about Nkuzi Development Association</a></li>
-              <li><a href="directors.php">Nkuzi Development Association Directors </a></li>
-              <li><a href="staff.php">Nkuzi Development Association Staff  </a></li>
-              <li><a href="funders.php">Nkuzi Development Funders/Donors  </a></li>
+              <li><a href="about.html">More About Us</a></li>
+              <li><a href="directors.php">Board Of Directors </a></li>
+              <li><a href="staff.php">Our Staff  </a></li>
+              <li><a href="funders.php">Our Funders/Donors  </a></li>
               <li><a href="partners.html">Our Partners</a></li>
-              <li><a href="portfolio.html">Gallery</a></li>
+
             </ul>
+
           </li>
-          <li><a href="blog.php">Programme</a></li>
-          <li><a href="documents.html">Documents</a></li>
           <li><a href="history.html">History</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.php">Programme</a></li>
+          <li><a href="documents.php">Documents</a></li>
+
           <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="adminLogin.php">Admin Login</a></li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -189,6 +192,51 @@
 
         </section>
 
+        <section style="margin-top: 0px" class="services">
+          <div class="container">
+           <h3>List of Documents (PDF)</h3>
+           <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModalDoc" >Add New Documnent</button>
+           <p> </p>
+           <div class="row">
+             <?php
+
+             $sql = "SELECT * FROM documents";
+             $result = $conn->query($sql);
+             //Store the results in an array
+             $arr = array();
+             while ($row = mysqli_fetch_assoc($result)) {
+              $arr[] = $row;
+             ?>
+
+             <div class="col-lg-4  col-md-12  ">
+               <div class="member">
+                 <iframe src="phpScripts/pdf_uploads/<?php echo  $row['document_location'];?>" width="100%" height="200px" allowtransparency="yes" frameborder="0">
+</iframe>
+                 <div class="member-info">
+                   <h4><?php echo  $row['document_title']; ?></h4>
+                   <span><?php echo  $row['document_type']; ?></span>
+                 </div>
+                 <form action="phpScripts/adminOparation.php" method="POST"  enctype="multipart/form-data">
+                   <input type="text" class="form-control" name="type" id="type" value="deleteDoc" hidden>
+                      <input type="text" class="form-control" name="file" id="file" value="pdf_uploads/<?php echo  $row['document_location'];?>" hidden>
+                   <input type="text" class="form-control" name="id" id="id" value="<?php echo  $row['document_id']; ?>" hidden>
+                 <div class="member-info">
+                   <button style="width:100%" class="btn btn-danger" type="submit">Delete Document </button>
+                 </div>
+                 <br>
+               </form>
+               </div>
+             </div>
+             <?php } ?>
+
+
+
+           </div>
+
+          </div>
+
+        </section>
+
 
         <section id="blog" class="blog">
           <div class="container" data-aos="fade-up">
@@ -268,10 +316,10 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="index.php">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="developments.html">Developments</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="documents.html">Documents</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="documents.php">Documents</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="partners.html">Our Partners</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="portfolio.html">Gallery</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact Us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="gallery.html">Gallery</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="adminLogin.php">Admin Login</a></li>
             </ul>
           </div>
 
@@ -377,6 +425,44 @@
    </div>
  </div>
 </div>
+
+<div class="modal fade" id="myModalDoc" role="dialog">
+<div class="modal-dialog modal-sm">
+ <div class="modal-content">
+   <div class="modal-header">
+     <button type="button" class="close" data-dismiss="modal">&times;</button>
+     <h4 class="modal-title">Add New Document</h4>
+   </div>
+   <div class="modal-body">
+     <form action="phpScripts/adminOparation.php" method="POST"  enctype="multipart/form-data">
+      <input type="text" class="form-control" name="type" id="type" value="addDoc" hidden>
+       <div class="form-group mt-3">
+         <input type="text" class="form-control" name="title" id="title" placeholder="Documnet Title" required>
+       </div>
+       <div class="form-group mt-3">
+         <select class="form-control" name="docType" id="docType">
+           <option value="Annual reports Documents">Annual reports Documents</option>
+           <option value="Research Reports Documents">Research Reports Documents</option>
+           <option value="Case Studies">Case Studies</option>
+           <option value="Judgements">Judgements</option>
+        </select>
+      </div>
+        <div class="form-group mt-3">
+           <input required type="file" accept="application/pdf" id="file" class="form-content"  name="file"  />
+        </div>
+        <div class="form-group mt-3">
+          <button style="width:100%" class="btn btn-success" type="submit">Add New Document</button>
+        </div>
+      </form>
+   </div>
+   <div class="modal-footer">
+     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModal2" role="dialog">

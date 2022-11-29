@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Nkuzi Development Association - About Us</title>
+  <title>About Us</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -15,6 +15,10 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -47,19 +51,20 @@
           <li><a href="index.php">Home</a></li>
           <li class="dropdown"><a href="#"><span>About Us</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a class="active " href="about.html">More about Nkuzi Development Association</a></li>
-              <li><a href="directors.php">Nkuzi Development Association Directors </a></li>
-              <li><a href="staff.php">Nkuzi Development Association Staff  </a></li>
-              <li><a href="funders.php">Nkuzi Development Funders/Donors  </a></li>
+              <li><a class="active " href="about.html">More About Us</a></li>
+              <li><a href="directors.php">Board Of Directors </a></li>
+              <li><a href="staff.php">Our Staff  </a></li>
+              <li><a href="funders.php">Our Funders/Donors  </a></li>
               <li><a href="partners.html">Our Partners</a></li>
-              <li><a href="portfolio.html">Gallery</a></li>
             </ul>
           </li>
-          <li><a href="blog.php">Programme</a></li>
-          <li><a href="documents.html">Documents</a></li>
           <li><a href="history.html">History</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.php">Programme</a></li>
+          <li><a href="documents.php">Documents</a></li>
+
           <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="adminLogin.php">Admin Login</a></li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -75,58 +80,80 @@
 
         <div class="d-flex justify-content-between align-items-center">
           <h2>About Us</h2>
-          <ol>
-            <li><a href="index.php">Home</a></li>
-            <li>About Us</li>
-          </ol>
         </div>
 
       </div>
-    </section><!-- End About Us Section -->
+    </section><!-- End About Us Section class="fst-italic" -->
 
     <!-- ======= About Section ======= -->
     <section class="about" data-aos="fade-up">
       <div class="container">
-
         <div class="row">
+
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <h3>More About Us </h3>
+            <p >
+            Nkuzi Development Association NPC was established in 1997 in response to the need to assist communities within the Makhado area to lodge land claims after the introduction of the Restitution of Land Rights Act No. 22 of 1994. By then the offices of the Land Claims Commission were only in Pretoria.
+          </p>
+            <p >
+          Nkuzi has assisted in the completion of claims forms, facilitation of land claims committees, and documentation of supporting evidence for the land claims. The claimant communities and groups were assisted in order that they do not miss the 31st December 1998 cut-off date for lodgment of land claims.  </p>
+            <p >
+          Nkuzi started operating with a team of 4 employees which ultimately grew into 24 in the year 2000 with offices in Acornhoek <strong> (Mpumalanga)</strong>, Elim, Modimolle, Polokwane <strong>(Limpopo)</strong>, and Pretoria <strong>(Gauteng)</strong>. The organization has since downscaled to one office in Polokwane in 2013 due to funding constraints. This alone led to the area of operation being reduced from 3 provinces to 1 province, being Limpopo.
+        </p>
+          </div>
           <div class="col-lg-6">
             <img src="images/far4.png" class="img-fluid" alt="">
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <h3>More about Nkuzi Development Association NPC</h3>
-            <p class="fst-italic">
-              Vision:  Land is available, accessible, and effectively utilized by previously landless and marginalized people.
-            </p>
-            <p class="fst-italic">
-            Mission:   Nkuzi works towards the empowerment of disadvantaged men and women to have access to sufficient land secure tenure security, food security, provision of basic services, and integrated local economic development. This is done through the provision of legal services, training and capacity building, research, advocacy, and lobbying for effective policy change.
-            </p>
-            <p class="fst-italic">
-            Nkuzi Development Association NPC was established in 1997 in response to the need to assist communities within the Makhado area to lodge land claims after the introduction of the Restitution of Land Rights Act   No. 22 of 1994. By then the offices of the Land Claims Commission were only in Pretoria.
-            </p>
-          </div>
         </div>
         <div style="margin-top:20px" class="row">
+
+          <div  class="col-lg-6">
+            <div class="container">
+            </br>
+  <p><strong>Our Vision</strong> and  <strong>Mission</strong> </p>
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+      <strong>Our Vision</strong>
+      </a>
+      </div>
+      <div id="collapseOne" class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+        Land is available, accessible, and effectively utilized by previously landless and marginalized people.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+        <strong>Our Mission </strong>
+      </a>
+      </div>
+      <div id="collapseTwo" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+        Nkuzi works towards the empowerment of disadvantaged men and women to have access to sufficient land-secure tenure security, food security, provision of basic services, and integrated local economic development. This is done through the provision of legal services, training and capacity building, research, advocacy, and lobbying for effective policy change.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+      
+          </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
 
-            <p class="fst-italic">
-            Realisation of this vision is sought through the mission and goals that Nkuzi has set and which are applied across all of the organization 's programmes:
-            </p>
-            <ul>
-              <li><i class="bi bi-check2-circle"></i> Landless People are empowered to drive land reform process which shifts power relations so that the poor, rural and landless access and utilize land equitably and effectively.</li>
+            <p >
+        <strong>  The realization of this vision is sought through the mission and goals that Nkuzi has set and which are applied across all of the organization's programmes: </strong>
+        </p>
+            <ul class="fst-italic">
+              <li><i class="bi bi-check2-circle "></i> Landless People are empowered to drive a land reform process that shifts power relations so that the poor, rural, and landless access and utilize land equitably and effectively.</li>
               <li><i class="bi bi-check2-circle"></i> Farm residents worked with are informed of their land and related rights and are assisted to exercise those rights.</li>
               <li><i class="bi bi-check2-circle"></i> An improved level of debate among key stakeholders on pro-poor agrarian strategies and their implementation.</li>
-              <li><i class="bi bi-check2-circle"></i> Quality legal and paralegal support available to enable the poor and landless people to exercise their land other human rights.</li>
-              <li><i class="bi bi-check2-circle"></i> Nkuzi has sufficient resources, effectively managed and implement proper monitoring mechanisms.</li>
+              <li><i class="bi bi-check2-circle"></i>  Quality legal and paralegal support is available to enable the poor and landless people to exercise their land and other human rights.</li>
+              <li><i class="bi bi-check2-circle"></i> Nkuzi has sufficient resources, and effectively managed and implement proper monitoring mechanisms.</li>
   </ul>
 
-          </div>
-          <div  class="col-lg-6">
-            <p>
-            Nkuzi assisted in the completion of claims forms, facilitation of land claims committees, and documentation of supporting evidence for the land claims. The claimant communities and groups were assisted in order that they do not miss the 31st December 1998 cut-off date for lodgement of land claims.
-            </p>
-            <p>
-            Nkuzi started operating with a team of four/4 employees who ultimately grew into 24 in around 2000 with offices in Acornhoek, Elim, Modimolle, Pretoria, and Polokwane.  The organization has since downscaled to one office in Polokwane in 2013 in due to funding constraints.  This alone led to the area of operation being reduced from three/3 provinces to one/1 province, being Limpopo.
-            </p>
           </div>
         </div>
       </div>
@@ -149,10 +176,10 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="index.php">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="developments.html">Developments</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="documents.html">Documents</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="documents.php">Documents</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="partners.html">Our Partners</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="portfolio.html">Gallery</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact Us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="gallery.html">Gallery</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="adminLogin.php">Admin Login</a></li>
             </ul>
           </div>
 

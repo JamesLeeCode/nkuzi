@@ -6,6 +6,64 @@ session_start();
  $conn = OpenCon();
 
 
+ if ($_POST['type'] == "addDoc") {
+   $document_title = $_POST['title'];
+   $document_type = $_POST['docType'];
+   $document_location = "" ;
+
+   if(isset($_FILES["file"]) && $_FILES["file"]["error"] == 0){
+     $targetfolder = "pdf_uploads/";
+     $targetfolder = $targetfolder . basename( $_FILES['file']['name']) ;
+
+      $ok=1;
+
+      $file_type=$_FILES['file']['type'];
+
+          if ($file_type=="application/pdf") {
+          if(move_uploaded_file($_FILES['file']['tmp_name'], $targetfolder))
+            {
+            $document_location = basename( $_FILES['file']['name']) ;
+            echo "The file ". basename( $_FILES['file']['name']). " is uploaded";
+            }
+            else {
+            echo "Problem uploading file";
+            }
+          }
+          else {
+          echo "You may only upload PDFs.<br>";
+          }
+
+       } else{
+           echo "Error: " . $_FILES["pic"]["error"];
+       }
+
+       function generateRandomString($length = 13) {
+         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+         $charactersLength = strlen($characters);
+         $randomString = '';
+         for ($i = 0; $i < $length; $i++) {
+             $randomString .= $characters[rand(0, $charactersLength - 1)];
+         }
+         return $randomString;
+     }
+     $document_id  = generateRandomString();
+
+
+  //Open DB Connection
+  $conn = OpenCon();
+   // Enter Designations Into DB
+  if(!$conn -> query(
+    " INSERT INTO documents (document_id , document_title,	document_location , document_type)
+    VALUES ('$document_id','$document_title', '$document_location','$document_type' )"
+    ))
+    {
+      echo("Error description: ". $conn->error);
+    }
+
+    header("Location:../adminDashboard.php");
+    exit();
+
+ }
 
  if ($_POST['type'] == "addStaff") {
    $name = $_POST['name'];
@@ -129,6 +187,7 @@ session_start();
  }
  $id = generateRandomString();
 
+
    if(isset($_FILES["pic"]) && $_FILES["pic"]["error"] == 0){
            $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
            $filename = $_FILES["pic"]["name"];
@@ -173,6 +232,33 @@ session_start();
 
    header("Location:../adminDashboard.php");
    exit();
+
+ }
+
+
+ if ($_POST['type'] == "deleteDoc") {
+   $document_id = $_POST['id'];
+  //Open DB Connection
+  $conn = OpenCon();
+   // Enter Designations Into DB
+   if(!$conn -> query(
+     " Delete FROM documents WHERE document_id  = '$document_id'"
+     ))
+     {
+       echo("Error description: ". $conn->error);
+     }
+
+     $file_pointer = $_POST['file'];
+     // Use unlink() function to delete a file
+     if (!unlink($file_pointer)) {
+         echo ("$file_pointer cannot be deleted due to an error");
+     }
+     else {
+         echo ("$file_pointer has been deleted");
+     }
+
+    header("Location:../adminDashboard.php");
+    exit();
 
  }
 
@@ -286,7 +372,7 @@ if ($_POST['type'] == "sendMail") {
   $msg = wordwrap($msg,70);
 
   // send email
-  mail("mazivise.jamesleeroy@gmail.com",  $subject ,$msg);
+   mail("mazivise.jamesleeroy@gmail.com",  $subject ,$msg);
    header("Location:../index.php");
    exit();
 

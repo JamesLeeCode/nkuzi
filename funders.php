@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Nkuzi Development Association - Funders</title>
+  <title>Funders</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -52,19 +52,21 @@
           <li><a  href="index.php">Home</a></li>
           <li class="dropdown"><a href="#"><span>About Us</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="about.html">More about Nkuzi Development Association</a></li>
-              <li><a href="directors.php">Nkuzi Development Association Directors </a></li>
-              <li><a href="staff.php">Nkuzi Development Association Staff  </a></li>
-              <li><a class="active "  href="funders.php">Nkuzi Development Funders/Donors  </a></li>
+              <li><a href="about.html">More About Us</a></li>
+              <li><a href="directors.php">Board Of Directors </a></li>
+              <li><a href="staff.php">Our Staff  </a></li>
+              <li><a class="active "  href="funders.php">Our Funders/Donors  </a></li>
               <li><a href="partners.html">Our Partners</a></li>
-              <li><a href="portfolio.html">Gallery</a></li>
+
             </ul>
           </li>
-          <li><a href="blog.php">Programme</a></li>
-          <li><a href="documents.html">Documents</a></li>
           <li><a href="history.html">History</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.php">Programme</a></li>
+          <li><a href="documents.php">Documents</a></li>
+
           <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="adminLogin.php">Admin Login</a></li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -79,10 +81,7 @@
 
         <div class="d-flex justify-content-between align-items-center">
           <h2>List of Our Funders / Donors</h2>
-          <ol>
-            <li><a href="index.php">Home</a></li>
-            <li>List of Our Funders / Donors</li>
-          </ol>
+
         </div>
 
       </div>
@@ -93,9 +92,7 @@
 
 
         <div class="gallery" id="gallery">
-          <div class="gallery-item">
-              <div class="content"><img src="images/Breadfortheworldlogo.png" alt=""></div>
-          </div>
+
           <div class="gallery-item">
               <div class="content"><img src="images/funders.png" alt=""></div>
           </div>
@@ -103,7 +100,9 @@
               <div class="content"><img src="images/funder3.jpg" alt=""></div>
           </div>
 
-
+          <div class="gallery-item">
+              <div class="content"><img src="images/Brot.png" alt=""></div>
+          </div>
 
       </div>
       </div>
@@ -181,10 +180,10 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="index.php">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="developments.html">Developments</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="documents.html">Documents</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="documents.php">Documents</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="partners.html">Our Partners</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="portfolio.html">Gallery</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact Us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="gallery.html">Gallery</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="adminLogin.php">Admin Login</a></li>
             </ul>
           </div>
 
